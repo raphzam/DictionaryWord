@@ -1,0 +1,47 @@
+take input for ten words
+print in the original order
+print in alphabetical order
+print in reversed alphabetical order
+-----------------------------------
+
+1. GET user for input String
+
+2. VERIFY input
+quit if any numbers or special characters
+
+##edit
+make String all lowerCaseString
+turn lowerCaseString into an array splitting by whiteSpaces
+
+check arrayLength to make sure they entered 10 words
+if 1,
+maybe pressed enter too early
+explain how to enter words
+else if < 10
+too few words
+elseif > 10
+too many words
+
+3. ALPHABETIZE
+check first letter of firstWord in the array against firstWord+1
+if firstCharacter in firstWord is > firstCharacter in firstWord+1
+SWAP
+keep doing this till the end of the array
+and repeat from beginning until no more SWAP
+
+//if first character is a e i o u store in another vowelArray
+
+
+4. PRINTING
+print string from original user input
+print the array which is now alphabetical with for loop
+reverse the for loop of the array to print the words in reverse
+
+//print vowelArray
+
+
+
+
+
+
+
