@@ -7,6 +7,7 @@ public class DictionaryWordListing {
 
 //        TESTS TESTS TESTS
 //        String originalText = "kiwi pineapple apple banana orange grapes watermelon cherry strawberry melon"; // OG TEST STRING
+//        String originalText= "zebra alpha omega delta ipsilon epsilon aaron book solid jam";
 //        String originalText = "dog cat bat animal else full true false nine igloo"; //FAILED full and false
 //        String originalText = "ate apple book banana cooking crew dude doggo else eat "; //same letter test
 //        String originalText = "kiwi p4neapple @pple banana orange, grapes watermelon cherry strawberry melon";
@@ -15,6 +16,7 @@ public class DictionaryWordListing {
 //        String originalText = "kiwi PINEAPPLE apple BANANA orange grapes WATERMELON CHERRY strawberry melon"; //ALPHA TEST
 //----------------------------------------------------------------------------------------------------------------------
 
+        //V2.0
 
         //PROMPTING AND GETTING USER INPUT
         System.out.println("Enter ten words on a single line with a single space in between each word:");
@@ -71,7 +73,7 @@ public class DictionaryWordListing {
 
 
 
-        //ALPHABETIZING THE WORDS
+        //ALPHABETIZING THE WORDS v2
 
         boolean isSorted = false;
         String temp;
@@ -80,12 +82,19 @@ public class DictionaryWordListing {
             isSorted = true; //will exit loop if no swaps are made
             for (int i = 0; i < words.length -1 ; i++) {
                 for (int j = 0; j < words.length -1 -i; j++) {
-                    if (words[i].charAt(0) > words[i+1].charAt(0)){
-                        temp = words[i];
-                        words[i] = words[i+1];
-                        words[i+1] = temp;
-                        isSorted = false;
-                    }// swap
+                    for (int k = 0; ; k++) {
+                        if(words[i].charAt(k) == words[i+1].charAt(k)){
+                            continue;
+                        } else if (words[i].charAt(k) > words[i+1].charAt(k)){
+                            temp = words[i];
+                            words[i] = words[i+1];
+                            words[i+1] = temp;
+                            isSorted = false;
+                            break;
+                        } else {
+                            break;
+                        }
+                    }// k loop for nextChar exit
 
 
                 }// j loop words exit
@@ -93,6 +102,8 @@ public class DictionaryWordListing {
             } //i loop how many swaps exit
         }
 //        System.out.println("exitBooleancheck");                                                   //CHECK
+
+
 
 
 
@@ -138,13 +149,35 @@ public class DictionaryWordListing {
     }
 }
 
+//String [] vowelArray
 
 
 
 
+/*   original submission
+    //ALPHABETIZING THE WORDS
+
+    boolean isSorted = false;
+    String temp;
+
+        while (!isSorted) {
+                isSorted = true; //will exit loop if no swaps are made
+                for (int i = 0; i < words.length -1 ; i++) {
+        for (int j = 0; j < words.length -1 -i; j++) {
+        if (words[i].charAt(0) > words[i+1].charAt(0)){
+        temp = words[i];
+        words[i] = words[i+1];
+        words[i+1] = temp;
+        isSorted = false;
+        }// swap
 
 
+        }// j loop words exit
 
+        } //i loop how many swaps exit
+        }
+//        System.out.println("exitBooleancheck");
+*/
 
 
 
